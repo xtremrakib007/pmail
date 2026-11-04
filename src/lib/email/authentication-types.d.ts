@@ -7,7 +7,7 @@ export type MessageAuthenticationMethod = {
 
 /**
  * Authentication results the receiving provider recorded. Only the provider
- * headers Mailflare trusts are read, so these values never come from headers
+ * headers Xmail trusts are read, so these values never come from headers
  * the sender wrote.
  */
 export type MessageAuthentication = {

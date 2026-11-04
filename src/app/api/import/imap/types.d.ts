@@ -8,6 +8,6 @@ export type ImapImportRequest = {
 	/** Messages per batch, or the cap per folder when importAll is off. */
 	limit?: number;
 	importAll?: boolean;
-	/** Folders to read, each with the Mailflare destination it lands in. */
+	/** Folders to read, each with the Xmail destination it lands in. */
 	sources?: { folder?: string; destination?: string }[];
 };

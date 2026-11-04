@@ -1,7 +1,9 @@
-<img src="public/icon-192.png" alt="Mailflare" width="96" />
+<img src="public/icon-192.png" alt="Xmail" width="96" />
 
 
-# Mailflare
+# Xmail
+
+> Xmail is a rebranded copy of [Mailflare](https://github.com/hieunc229/mailflare) by hieunc229, licensed under AGPL-3.0. Internal resource names (Worker, database, bucket, queues) still use `mailflare` so deployment keeps working.
 
 A self-hosted alternative to Google Workspace. Setup **custom domain Emails**, **Calendar, Drive, Booking** and **built-in AI agents**.
 

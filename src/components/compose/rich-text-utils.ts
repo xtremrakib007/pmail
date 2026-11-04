@@ -85,7 +85,7 @@ const BLOCK_TAGS = new Set(["p", "div", "li", "tr", "h1", "h2", "h3", "h4", "h5"
 /**
  * The text/plain alternative of a composed message. Blocks become lines, lists
  * get bullets or numbers, blockquotes get the classic "> " prefix so reply
- * chains stay readable in text-only clients and in Mailflare's own reader.
+ * chains stay readable in text-only clients and in Xmail's own reader.
  */
 export function htmlToPlainText(html: string | null | undefined): string {
 	if (!html) return "";

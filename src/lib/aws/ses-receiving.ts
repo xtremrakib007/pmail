@@ -39,7 +39,7 @@ function isPublicHttps(origin: string): boolean {
 }
 
 /**
- * Creates what SES needs to hand Mailflare a message: an S3 bucket SES may write
+ * Creates what SES needs to hand Xmail a message: an S3 bucket SES may write
  * to, an SNS topic SES may publish to (subscribed to this app's signed endpoint),
  * and a receipt rule for the domain, then points the domain's MX at SES.
  * Everything is idempotent, so running it again repairs a partial setup.
@@ -146,7 +146,7 @@ export async function getSesReceivingView(env: CloudflareEnv, domain: DomainRow)
 	const bucketOk = !!state && await attempt(() => bucketExists(config, state.bucket));
 	steps.push({ key: "bucket", label: "S3 bucket for raw mail", ok: bucketOk, detail: state?.bucket });
 	const subscribed = !!state && await attempt(async () => (await listSubscriptions(config, state.topicArn)).some((subscription) => subscription.endpoint === state.endpoint && subscription.confirmed));
-	steps.push({ key: "topic", label: "SNS topic delivering to Mailflare", ok: subscribed, detail: state && !subscribed ? "Subscription not confirmed yet" : undefined });
+	steps.push({ key: "topic", label: "SNS topic delivering to Xmail", ok: subscribed, detail: state && !subscribed ? "Subscription not confirmed yet" : undefined });
 	const ruleOk = !!state && await attempt(() => describeReceiptRule(config, state.ruleSet, ruleName(domain.hostname)));
 	steps.push({ key: "rule", label: "SES receipt rule for this domain", ok: ruleOk, detail: ruleOk ? state?.ruleSet : undefined });
 	const mxOk = await hasMx(env, domain, mx);

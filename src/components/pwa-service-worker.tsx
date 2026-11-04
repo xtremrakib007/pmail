@@ -55,7 +55,7 @@ export function PwaServiceWorker() {
 				cleanups.push(() => document.removeEventListener("visibilitychange", onVisible));
 			})
 			.catch((error) => {
-				console.warn("Mailflare service worker registration failed", error);
+				console.warn("Xmail service worker registration failed", error);
 			});
 
 		return () => {

@@ -41,7 +41,7 @@ export type JmapContext = {
 
 export type JmapMethodHandler = (ctx: JmapContext, args: Record<string, unknown>) => Promise<Record<string, unknown> | JmapMethodError>;
 
-/** How a JMAP Mailbox id maps onto Mailflare's mailbox × status/folder model. */
+/** How a JMAP Mailbox id maps onto Xmail's mailbox × status/folder model. */
 export type MailboxRef =
 	| { kind: "account"; mailboxId: string }
 	| { kind: "role"; mailboxId: string; role: SystemRole }

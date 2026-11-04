@@ -34,7 +34,7 @@ export function SidebarFooter() {
   );
 }
 
-/** The "Powered by Mailflare vX" credit, shared by the mail and Drive sidebars. */
+/** The "Powered by Xmail vX" credit, shared by the mail and Drive sidebars. */
 export function PoweredBy({ className = "px-1" }: { className?: string }) {
 	const { t } = useLanguage();
 	return (
@@ -46,7 +46,7 @@ export function PoweredBy({ className = "px-1" }: { className?: string }) {
           className="hover:underline text-neutral-500"
           rel="noreferrer"
         >
-          Mailflare v{packageJson.version}
+          Xmail v{packageJson.version}
         </a>
       </p>
 	);

@@ -4,7 +4,7 @@ import { listAccessibleMailboxes } from "@/lib/mailboxes/access";
 import { getMailboxDomainAddresses } from "@/lib/mailboxes/domain-addresses";
 import type { AccessibleMailbox, JmapContext } from "./types";
 
-/** Every Mailflare mailbox the key's user can read, in a JMAP-shaped record. */
+/** Every Xmail mailbox the key's user can read, in a JMAP-shaped record. */
 export function listJmapMailboxes(ctx: JmapContext): Promise<AccessibleMailbox[]> {
 	if (ctx.memo === null) return loadJmapMailboxes(ctx);
 	const memo = (ctx.memo ??= {});

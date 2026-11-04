@@ -96,7 +96,7 @@ async function main() {
 	});
 
 	server.listen(port, host, () => {
-		console.log(`Mailflare listening on http://${host}:${port} (data in ${runtime.dataDir})`);
+		console.log(`Xmail listening on http://${host}:${port} (data in ${runtime.dataDir})`);
 	});
 
 	const smtpPort = Number(process.env.SMTP_INBOUND_PORT ?? 25);
@@ -124,6 +124,6 @@ async function main() {
 }
 
 main().catch((error) => {
-	console.error("Mailflare failed to start", error);
+	console.error("Xmail failed to start", error);
 	process.exit(1);
 });
