@@ -53,7 +53,7 @@ export const identitySet: JmapMethodHandler = async (ctx, args) => ({
 });
 
 /**
- * EmailSubmission/set: send a draft. Mailflare's send writes a fresh Sent row,
+ * EmailSubmission/set: send a draft. Xmail's send writes a fresh Sent row,
  * so the draft is removed afterwards and the submission id is the sent
  * message's id; onSuccessDestroyEmail / onSuccessUpdateEmail are honoured
  * by reporting the draft as destroyed.
@@ -80,7 +80,7 @@ export const emailSubmissionSet: JmapMethodHandler = async (ctx, args) => {
 		// AI drafts must pass the human review step that /api/send enforces.
 		const [agentDraft] = await ctx.db.select({ draftId: agentDraftMetadata.draftId }).from(agentDraftMetadata).where(eq(agentDraftMetadata.draftId, draft.id)).limit(1);
 		if (agentDraft) {
-			notCreated[creationId] = { type: "forbidden", description: "Review and confirm this AI draft in Mailflare before sending" };
+			notCreated[creationId] = { type: "forbidden", description: "Review and confirm this AI draft in Xmail before sending" };
 			continue;
 		}
 		try {

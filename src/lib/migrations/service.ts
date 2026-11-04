@@ -59,7 +59,7 @@ export async function applyPendingMigrations(db: D1Database): Promise<MigrationR
 	const { table, create } = MIGRATION_TABLES[dialect];
 	const initial = await getMigrationStatus(db);
 	if (initial.unknown.length > 0) {
-		throw new Error("The database contains migrations that are not part of this Mailflare release.");
+		throw new Error("The database contains migrations that are not part of this Xmail release.");
 	}
 
 	await db.prepare(create).run();
